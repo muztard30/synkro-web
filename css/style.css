@@ -1,0 +1,74 @@
+/* Estilos Corporativos Synkro (Dark Theme) */
+:root {
+  --primary-color: #00adb5;
+  --bg-dark: #222831;
+  --bg-card: #393e46;
+  --text-light: #eeeeee;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+.navbar {
+  background-color: #1a1e24 !important;
+  border-bottom: 2px solid var(--primary-color);
+}
+.navbar-brand {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+.nav-link {
+  color: var(--text-light) !important;
+}
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+.btn-synkro {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+.btn-synkro:hover {
+  background-color: #007d84;
+  color: white;
+}
+.btn-outline-synkro {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.btn-outline-synkro:hover {
+  background-color: var(--primary-color);
+  color: #1a1e24;
+}
+.chart-container {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+/* Estilos para el Modal del Dashboard (IA) */
+.metric-box {
+  background-color: var(--bg-dark);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border-left: 5px solid #00adb5;
+}
+.ia-alert {
+  border-left-color: #fce38a;
+}
