@@ -1,6 +1,6 @@
-// Configuración global de colores para Chart.js (Dark Theme)
-Chart.defaults.color = '#ccc';
-Chart.defaults.borderColor = '#444';
+// Configuración global de colores para fondo BLANCO
+Chart.defaults.color = '#333333';
+Chart.defaults.borderColor = '#e2e8f0';
 
 const chartsConfig = [
   {
@@ -14,22 +14,22 @@ const chartsConfig = [
     id: 'chart2',
     label: 'kWh',
     data: [2, 4, 6, 5, 7, 8],
-    backgroundColor: 'rgba(252, 227, 138, 0.2)', // Amarillo suave
-    borderColor: 'rgba(252, 227, 138, 1)'
+    backgroundColor: 'rgba(255, 193, 7, 0.2)', // Amarillo
+    borderColor: 'rgba(255, 193, 7, 1)'
   },
   {
     id: 'chart3',
     label: '°C',
     data: [25, 27, 29, 30, 28, 26],
-    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Rojo alerta
-    borderColor: 'rgba(255, 99, 132, 1)'
+    backgroundColor: 'rgba(220, 53, 69, 0.2)', // Rojo
+    borderColor: 'rgba(220, 53, 69, 1)'
   },
   {
     id: 'chart4',
     label: '%',
     data: [80, 75, 70, 85, 90, 95],
-    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Azul eléctrico
-    borderColor: 'rgba(54, 162, 235, 1)'
+    backgroundColor: 'rgba(13, 110, 253, 0.2)', // Azul
+    borderColor: 'rgba(13, 110, 253, 1)'
   }
 ];
 
