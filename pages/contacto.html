@@ -33,16 +33,16 @@
         
         <form onsubmit="event.preventDefault(); alert('Ticket de asistencia generado con éxito. Su número de seguimiento ha sido enviado al correo registrado.');">
           <div class="mb-3">
-            <label class="form-label text-white-50">ID de Cliente o Empresa</label>
-            <input type="text" class="form-control bg-dark text-white border-secondary" required>
+            <label class="form-label text-dark fw-bold">ID de Cliente o Empresa</label>
+            <input type="text" class="form-control bg-white text-dark border-secondary" required>
           </div>
           <div class="mb-3">
-            <label class="form-label text-white-50">Número de Serie del Nodo IoT / Equipo</label>
-            <input type="text" class="form-control bg-dark text-white border-secondary" placeholder="Ej: MAC o IMEI del dispositivo" required>
+            <label class="form-label text-dark fw-bold">Número de Serie del Nodo IoT / Equipo</label>
+            <input type="text" class="form-control bg-white text-dark border-secondary" required>
           </div>
           <div class="mb-3">
-            <label class="form-label text-white-50">Severidad de la Incidencia</label>
-            <select class="form-select bg-dark text-white border-secondary" required>
+            <label class="form-label text-dark fw-bold">Severidad de la Incidencia</label>
+            <select class="form-select bg-white text-dark border-secondary" required>
               <option value="">Seleccione un nivel...</option>
               <option value="baja">Crítica Baja (Consulta de software)</option>
               <option value="media">Crítica Media (Pérdida intermitente de datos)</option>
@@ -50,8 +50,8 @@
             </select>
           </div>
           <div class="mb-4">
-            <label class="form-label text-white-50">Descripción de la Anomalía Técnica</label>
-            <textarea class="form-control bg-dark text-white border-secondary" rows="4" placeholder="Detalle los síntomas observados en la instrumentación..." required></textarea>
+            <label class="form-label text-dark fw-bold">Descripción de la Anomalía Técnica</label>
+            <textarea class="form-control bg-white text-dark border-secondary" rows="4" required></textarea>
           </div>
           <button type="submit" class="btn btn-synkro w-100 py-2">Generar Ticket de Soporte</button>
         </form>
