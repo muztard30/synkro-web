@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synkro | Nuestros Servicios</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">SYNKRO.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Soporte</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5 mt-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold text-center mb-5" style="color: var(--primary-color);">NUESTRAS SOLUCIONES IoT</h1>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="chart-container text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h3 style="color: var(--primary-color);">Kits Piloto IoT</h3>
+              <p class="text-muted mt-3">Despliegue veloz de redes de sensores pre-configurados. Permite validar la telemetría y captura de datos en áreas críticas de su empresa antes de un escalamiento masivo.</p>
+            </div>
+            <button class="btn btn-synkro mt-3" data-bs-toggle="modal" data-bs-target="#modalCotizar" onclick="definirServicio('Kits Piloto IoT')">Cotizar Servicio</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="chart-container text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h3 style="color: var(--primary-color);">Retrofitting Industrial</h3>
+              <p class="text-muted mt-3">Modernización de maquinaria heredada o antigua. Añadimos nodos de percepción avanzados para digitalizar variables operativas críticas sin detener las líneas de producción.</p>
+            </div>
+            <button class="btn btn-synkro mt-3" data-bs-toggle="modal" data-bs-target="#modalCotizar" onclick="definirServicio('Retrofitting Industrial')">Cotizar Servicio</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="chart-container text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h3 style="color: var(--primary-color);">Arquitecturas a Medida</h3>
+              <p class="text-muted mt-3">Diseño completo desde la instrumentación y hardware electrónico (ESP32/STM32) hasta la integración de tableros eléctricos y redes LAN/WAN bajo normativas internacionales.</p>
+            </div>
+            <button class="btn btn-synkro mt-3" data-bs-toggle="modal" data-bs-target="#modalCotizar" onclick="definirServicio('Arquitecturas a Medida')">Cotizar Servicio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="modalCotizar" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--bg-card); color: var(--text-light); border: 1px solid var(--primary-color);">
+        <div class="modal-header" style="border-bottom: 1px solid #222831;">
+          <h5 class="modal-title" style="color: var(--primary-color);">Solicitud de Cotización</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted">Servicio: <strong id="txtServicio" class="text-white"></strong></p>
+          <form onsubmit="event.preventDefault(); alert('¡Solicitud enviada! Un ejecutivo comercial de Synkro se contactará con usted.'); text-reset();">
+            <input type="text" class="form-control mb-3 bg-dark text-white border-secondary" placeholder="Nombre Contacto" required>
+            <input type="email" class="form-control mb-3 bg-dark text-white border-secondary" placeholder="Correo Corporativo" required>
+            <input type="text" class="form-control mb-4 bg-dark text-white border-secondary" placeholder="Empresa / Organización" required>
+            <button type="submit" class="btn btn-synkro w-100" data-bs-dismiss="modal">Enviar Requerimiento</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function definirServicio(nombre) {
+      document.getElementById('txtServicio').innerText = nombre;
+    }
+  </script>
+</body>
+</html>
