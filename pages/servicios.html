@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synkro | Nuestros Servicios</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Vinculación al CSS central -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
+  <!-- Menú de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="../index.html">SYNKRO.</a>
@@ -25,11 +28,13 @@
     </div>
   </nav>
 
+  <!-- Contenido de Servicios -->
   <main class="py-5 mt-5">
     <div class="container">
       <h1 class="display-5 fw-bold text-center mb-5" style="color: var(--primary-color);">NUESTRAS SOLUCIONES IoT</h1>
       
       <div class="row g-4">
+        <!-- Tarjeta 1 -->
         <div class="col-md-4">
           <div class="chart-container text-center h-100 d-flex flex-column justify-content-between">
             <div>
@@ -39,6 +44,7 @@
             <button class="btn btn-synkro mt-3" data-bs-toggle="modal" data-bs-target="#modalCotizar" onclick="definirServicio('Kits Piloto IoT')">Cotizar Servicio</button>
           </div>
         </div>
+        <!-- Tarjeta 2 -->
         <div class="col-md-4">
           <div class="chart-container text-center h-100 d-flex flex-column justify-content-between">
             <div>
@@ -48,6 +54,7 @@
             <button class="btn btn-synkro mt-3" data-bs-toggle="modal" data-bs-target="#modalCotizar" onclick="definirServicio('Retrofitting Industrial')">Cotizar Servicio</button>
           </div>
         </div>
+        <!-- Tarjeta 3 -->
         <div class="col-md-4">
           <div class="chart-container text-center h-100 d-flex flex-column justify-content-between">
             <div>
@@ -61,6 +68,7 @@
     </div>
   </main>
 
+  <!-- MODAL: Formulario de Cotización -->
   <div class="modal fade" id="modalCotizar" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="background-color: #ffffff; color: var(--text-light); border: 1px solid var(--primary-color);">
@@ -71,6 +79,7 @@
         <div class="modal-body">
           <p class="text-muted">Servicio a cotizar: <strong id="txtServicio" style="color: var(--primary-color);"></strong></p>
           
+          <!-- Formulario corregido: sin placeholder -->
           <form onsubmit="event.preventDefault(); alert('¡Solicitud enviada! Un ejecutivo comercial de Synkro se contactará a su correo.'); this.reset();">
             <input type="email" class="form-control mb-4 bg-white text-dark border-secondary" required>
             <button type="submit" class="btn btn-synkro w-100" data-bs-dismiss="modal">Enviar Requerimiento</button>
