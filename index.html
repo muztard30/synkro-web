@@ -5,102 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synkro | Soluciones IoT</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    /* Estilos Corporativos Synkro (Dark Theme) */
-    :root {
-      --primary-color: #00adb5;
-      --bg-dark: #222831;
-      --bg-card: #393e46;
-      --text-light: #eeeeee;
-    }
-    html, body {
-      height: 100%;
-      margin: 0;
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    main {
-      flex: 1;
-    }
-    .navbar {
-      background-color: #1a1e24 !important;
-      border-bottom: 2px solid var(--primary-color);
-    }
-    .navbar-brand {
-      color: var(--primary-color) !important;
-      font-weight: bold;
-      letter-spacing: 1px;
-      font-size: 1.5rem;
-    }
-    .nav-link {
-      color: var(--text-light) !important;
-    }
-    .nav-link:hover {
-      color: var(--primary-color) !important;
-    }
-    .btn-synkro {
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: bold;
-      border: none;
-    }
-    .btn-synkro:hover {
-      background-color: #007d84;
-      color: white;
-    }
-    .btn-outline-synkro {
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
-      font-weight: bold;
-    }
-    .btn-outline-synkro:hover {
-      background-color: var(--primary-color);
-      color: #1a1e24;
-    }
-    .chart-container {
-      background-color: var(--bg-card);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-    .logo-img {
-      height: 30px;
-    }
-    /* Estilos para el Modal del Dashboard (IA) */
-    .metric-box {
-      background-color: var(--bg-dark);
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 15px;
-      border-left: 5px solid #00adb5;
-    }
-    .ia-alert {
-      border-left-color: #fce38a;
-    }
-  </style>
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        SYNKRO.
-      </a>
+      <a class="navbar-brand d-flex align-items-center" href="#">SYNKRO.</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto align-items-center">
           <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#soporte">Soporte</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contacto.html">Soporte</a></li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
             <button class="btn btn-outline-synkro btn-sm px-3 py-2" data-bs-toggle="modal" data-bs-target="#modalPortal">
               Portal Clientes
@@ -193,81 +113,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
-  <script>
-    // Configuración global de colores para Chart.js (Dark Theme)
-    Chart.defaults.color = '#ccc';
-    Chart.defaults.borderColor = '#444';
+  <script src="js/script.js"></script>
 
-    const chartsConfig = [
-      {
-        id: 'chart1',
-        label: 'Watts',
-        data: [120, 150, 180, 170, 160, 200],
-        backgroundColor: 'rgba(0, 173, 181, 0.2)', // Cyan Synkro
-        borderColor: 'rgba(0, 173, 181, 1)'
-      },
-      {
-        id: 'chart2',
-        label: 'kWh',
-        data: [2, 4, 6, 5, 7, 8],
-        backgroundColor: 'rgba(252, 227, 138, 0.2)', // Amarillo suave
-        borderColor: 'rgba(252, 227, 138, 1)'
-      },
-      {
-        id: 'chart3',
-        label: '°C',
-        data: [25, 27, 29, 30, 28, 26],
-        backgroundColor: 'rgba(255, 99, 132, 0.2)', // Rojo alerta
-        borderColor: 'rgba(255, 99, 132, 1)'
-      },
-      {
-        id: 'chart4',
-        label: '%',
-        data: [80, 75, 70, 85, 90, 95],
-        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Azul eléctrico
-        borderColor: 'rgba(54, 162, 235, 1)'
-      }
-    ];
-
-    chartsConfig.forEach(config => {
-      const ctx = document.getElementById(config.id).getContext('2d');
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
-          datasets: [{
-            label: config.label,
-            data: config.data,
-            backgroundColor: config.backgroundColor,
-            borderColor: config.borderColor,
-            borderWidth: 2,
-            tension: 0.4,
-            fill: true
-          }]
-        },
-        options: {
-          responsive: true,
-          scales: {
-            x: { title: { display: true, text: 'Hora (Tiempo Real)' } },
-            y: { title: { display: true, text: config.label }, beginAtZero: true }
-          },
-          plugins: {
-            legend: { display: false } // Oculta la leyenda para un diseño más limpio
-          }
-        }
-      });
-    });
-
-    // Lógica para simular el inicio de sesión en el Modal
-    function mostrarDashboard() {
-      document.getElementById('loginForm').style.display = 'none';
-      document.getElementById('dashboardUI').style.display = 'block';
-    }
-
-    function cerrarSesion() {
-      document.getElementById('dashboardUI').style.display = 'none';
-      document.getElementById('loginForm').style.display = 'block';
-    }
-  </script>
 </body>
 </html>
